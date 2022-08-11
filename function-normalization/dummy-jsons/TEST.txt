@@ -1,0 +1,7 @@
+use TEST
+db.dropDatabase()
+use TEST
+db.library.insert( {"name":"Test_Add","output_type":"float","args":[{"type":"int","name":"val_1","arg_id":1},{"type":"float","name":"val_2","arg_id":2}],"expression":[{"id":"1","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"int","name":"val_1","arg_id":1}},{"id":"2","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_2","arg_id":2}},{"id":"3","step":3,"from":[1,2],"next":0,"info":{"kind":"operation","name":"addition"}}]} )
+db.library.insert( {"name":"Test_Func","output_type":"float","args":[{"type":"float","name":"val_1","arg_id":1},{"type":"float","name":"val_2","arg_id":2},{"type":"float","name":"val_3","arg_id":3}],"expression":[{"id":"4","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_1","arg_id":1}},{"id":"5","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_2","arg_id":2}},{"id":"6","step":3,"from":[1,2],"next":5,"info":{"kind":"operation","name":"subtraction"}},{"id":"7","step":4,"from":0,"next":5,"info":{"kind":"arg","type":"float","name":"val_3","arg_id":3}},{"id":"8","step":5,"from":[4,3],"next":0,"info":{"kind":"operation","name":"subtraction"}}]} )
+cls
+db.library.find()
