@@ -1,7 +1,7 @@
 # Complex Function Normalization
 
 ## Description
-DIASTEMA is implimenting a feature able to handle complex functions as rules made by the end-users. These functions are able to make processing jobs on different datasets to produce a new dataset containing valuable information [[1]](https://github.com/DIASTEMA-UPRC/spark-on-kubernetes/blob/main/README.md#references).
+DIASTEMA is implimenting a feature able to handle complex functions as rules made by the end-users. These functions are able to make processing jobs on different datasets to produce a new dataset containing valuable information [[1]](https://github.com/DIASTEMA-UPRC/complex-function-normalization/blob/main/README.md#references).
 
 The ability to handle complex functions is done by first making a complex function (described as a JSON graph) as a simpler function. This is called the complex function normalization.
 
