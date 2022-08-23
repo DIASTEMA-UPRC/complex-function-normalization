@@ -1,0 +1,65 @@
+{
+    "name": "Test_Logic",
+    "output_type": "boolean",
+    "args": [
+      {
+        "type": "boolean",
+        "name": "val_1",
+        "arg_id": 1
+      },
+      {
+        "type": "boolean",
+        "name": "val_2",
+        "arg_id": 2
+      }
+    ],
+    "expression": [
+      {
+        "id": "1",
+        "step": 1,
+        "from": 0,
+        "next": 3,
+        "info": {
+          "kind": "arg",
+          "type": "boolean",
+          "name": "val_1",
+          "arg_id": 1
+        }
+      },
+      {
+        "id": "2",
+        "step": 2,
+        "from": 0,
+        "next": 3,
+        "info": {
+          "kind": "arg",
+          "type": "boolean",
+          "name": "val_2",
+          "arg_id": 2
+        }
+      },
+      {
+        "id": "3",
+        "step": 3,
+        "from": [
+          1,
+          2
+        ],
+        "next": 4,
+        "info": {
+          "kind": "operation",
+          "name": "logical_and"
+        }
+      },
+      {
+        "id": "4",
+        "step": 4,
+        "from": 3,
+        "next": 0,
+        "info": {
+          "kind": "operation",
+          "name": "logical_not"
+        }
+      }
+    ]
+  }

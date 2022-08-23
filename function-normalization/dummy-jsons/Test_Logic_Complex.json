@@ -1,0 +1,95 @@
+{
+    "name": "Test_Logic_Complex",
+    "output_type": "boolean",
+    "args": [
+      {
+        "type": "boolean",
+        "name": "val_1",
+        "arg_id": 1
+      },
+      {
+        "type": "boolean",
+        "name": "val_2",
+        "arg_id": 2
+      },
+      {
+        "type": "boolean",
+        "name": "val_3",
+        "arg_id": 3
+      }
+    ],
+    "expression": [
+      {
+        "id": "5",
+        "step": 1,
+        "from": 0,
+        "next": 3,
+        "info": {
+          "kind": "arg",
+          "type": "boolean",
+          "name": "val_1",
+          "arg_id": 1
+        }
+      },
+      {
+        "id": "6",
+        "step": 2,
+        "from": 0,
+        "next": 3,
+        "info": {
+          "kind": "arg",
+          "type": "boolean",
+          "name": "val_2",
+          "arg_id": 2
+        }
+      },
+      {
+        "id": "7",
+        "step": 3,
+        "from": [
+          1,
+          2
+        ],
+        "next": 5,
+        "info": {
+          "kind": "function",
+          "name": "Test_Logic"
+        }
+      },
+      {
+        "id": "8",
+        "step": 4,
+        "from": 0,
+        "next": 5,
+        "info": {
+          "kind": "arg",
+          "type": "boolean",
+          "name": "val_3",
+          "arg_id": 3
+        }
+      },
+      {
+        "id": "9",
+        "step": 5,
+        "from": [
+            3,
+            4
+        ],
+        "next": 6,
+        "info": {
+          "kind": "operation",
+          "name": "logical_or"
+        }
+      },
+      {
+        "id": "10",
+        "step": 6,
+        "from": 5,
+        "next": 0,
+        "info": {
+          "kind": "operation",
+          "name": "logical_not"
+        }
+      }
+    ]
+  }
