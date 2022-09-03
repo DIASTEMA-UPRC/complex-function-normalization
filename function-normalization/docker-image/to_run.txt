@@ -1,5 +1,7 @@
+# Build the Complex Function Normalization Service
 docker build --tag function-normalization-server-image .
 
+# Run the Complex Function Normalization Service
 docker run -d -p 127.0.0.1:5000:5000 ^
 --name function-normalization-server ^
 --restart always ^
