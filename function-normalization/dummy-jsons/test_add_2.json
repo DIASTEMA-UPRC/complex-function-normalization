@@ -1,0 +1,65 @@
+{
+    "function_id": "e59ac49f0ad48",
+    "name": "test_add",
+    "output_type": "float",
+    "color": "#a53434",
+    "args": [
+      {
+        "type": "int-column",
+        "name": "",
+        "arg_id": 1
+      },
+      {
+        "type": "int-column",
+        "name": "",
+        "arg_id": 2
+      }
+    ],
+    "expression": [
+      {
+        "id": 1664380105855,
+        "step": 1,
+        "info": {
+          "kind": "operation",
+          "name": "addition",
+          "color": "#a53434",
+          "output": "float"
+        },
+        "from": [
+          2,
+          3
+        ],
+        "next": 0
+      },
+      {
+        "id": 1664380145492,
+        "step": 2,
+        "info": {
+          "kind": "arg",
+          "type": "int-column",
+          "name": "",
+          "arg_id": 1
+        },
+        "from": 0,
+        "next": 1
+      },
+      {
+        "id": 1664380147964,
+        "step": 3,
+        "info": {
+          "kind": "arg",
+          "type": "int-column",
+          "name": "",
+          "arg_id": 2
+        },
+        "from": 0,
+        "next": 1
+      }
+    ],
+    "metadata": {
+      "user": "panos",
+      "function-type": "simple",
+      "function-date": "28-09-2022",
+      "function-time": "18:49:54:216"
+    }
+  }

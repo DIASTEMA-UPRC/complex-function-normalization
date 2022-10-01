@@ -1,0 +1,91 @@
+{
+    "function_id" : "d1ff93db9b23f",
+    "name" : "test_complex_2",
+    "output_type" : "float",
+    "color" : "#eeb63e",
+    "args" : [
+            {
+                    "arg_id" : 1,
+                    "name" : "",
+                    "type" : "int-column"
+            },
+            {
+                    "arg_id" : 2,
+                    "name" : "",
+                    "type" : "int-column"
+            },
+            {
+                    "arg_id" : 3,
+                    "name" : "",
+                    "type" : "int"
+            }
+    ],
+    "expression" : [
+            {
+                    "from" : [
+                            5,
+                            5
+                    ],
+                    "id" : 1664380769445,
+                    "info" : {
+                            "color" : "#eeb63e",
+                            "kind" : "operation",
+                            "name" : "power",
+                            "output" : "float"
+                    },
+                    "next" : 0,
+                    "step" : 2
+            },
+            {
+                    "from" : 0,
+                    "id" : 1664380779508,
+                    "info" : {
+                            "arg_id" : 1,
+                            "kind" : "arg",
+                            "name" : "",
+                            "type" : "int-column"
+                    },
+                    "next" : 5,
+                    "step" : 3
+            },
+            {
+                    "from" : 0,
+                    "id" : 1664380780688,
+                    "info" : {
+                            "arg_id" : 2,
+                            "kind" : "arg",
+                            "name" : "",
+                            "type" : "int-column"
+                    },
+                    "next" : 5,
+                    "step" : 4
+            },
+            {
+                    "from" : 0,
+                    "id" : 1664380782500,
+                    "info" : {
+                            "arg_id" : 3,
+                            "kind" : "arg",
+                            "name" : "",
+                            "type" : "int"
+                    },
+                    "next" : 2,
+                    "step" : 5
+            },
+            {
+                    "from" : [
+                            3,
+                            4
+                    ],
+                    "id" : 1664380105855,
+                    "info" : {
+                            "color" : "#a53434",
+                            "kind" : "operation",
+                            "name" : "addition",
+                            "output" : "float"
+                    },
+                    "next" : 2,
+                    "step" : 5
+            }
+    ]
+}
