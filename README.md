@@ -34,12 +34,14 @@ You can execute the functionality with other prerequisites and commands as well!
 #### MongoDB Initialization
 1. Open the MongoDB shell by typing "mongo" on a CMD and run the following commands:
 ```
-use TEST
+use UIDB
 db.dropDatabase()
-use TEST
-db.library.insert( {"name":"Test_Add","output_type":"float","args":[{"type":"int","name":"val_1","arg_id":1},{"type":"float","name":"val_2","arg_id":2}],"expression":[{"id":"1","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"int","name":"val_1","arg_id":1}},{"id":"2","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_2","arg_id":2}},{"id":"3","step":3,"from":[1,2],"next":0,"info":{"kind":"operation","name":"addition"}}]} )
-db.library.insert( {"name":"Test_Func","output_type":"float","args":[{"type":"float","name":"val_1","arg_id":1},{"type":"float","name":"val_2","arg_id":2},{"type":"float","name":"val_3","arg_id":3}],"expression":[{"id":"4","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_1","arg_id":1}},{"id":"5","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_2","arg_id":2}},{"id":"6","step":3,"from":[1,2],"next":5,"info":{"kind":"operation","name":"subtraction"}},{"id":"7","step":4,"from":0,"next":5,"info":{"kind":"arg","type":"float","name":"val_3","arg_id":3}},{"id":"8","step":5,"from":[4,3],"next":0,"info":{"kind":"operation","name":"subtraction"}}]} )
-db.library.insert( {"name":"Test_Logic","output_type":"boolean","args":[{"type":"boolean","name":"val_1","arg_id":1},{"type":"boolean","name":"val_2","arg_id":2}],"expression":[{"id":"1","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"boolean","name":"val_1","arg_id":1}},{"id":"2","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"boolean","name":"val_2","arg_id":2}},{"id":"3","step":3,"from":[1,2],"next":4,"info":{"kind":"operation","name":"logical_and"}},{"id":"4","step":4,"from":3,"next":0,"info":{"kind":"operation","name":"logical_not"}}]} )
+use UIDB
+db.functions.insert( {"name":"Test_Add","output_type":"float","args":[{"type":"int","name":"val_1","arg_id":1},{"type":"float","name":"val_2","arg_id":2}],"expression":[{"id":"1","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"int","name":"val_1","arg_id":1}},{"id":"2","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_2","arg_id":2}},{"id":"3","step":3,"from":[1,2],"next":0,"info":{"kind":"operation","name":"addition"}}]} )
+db.functions.insert( {"name":"Test_Func","output_type":"float","args":[{"type":"float","name":"val_1","arg_id":1},{"type":"float","name":"val_2","arg_id":2},{"type":"float","name":"val_3","arg_id":3}],"expression":[{"id":"4","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_1","arg_id":1}},{"id":"5","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"float","name":"val_2","arg_id":2}},{"id":"6","step":3,"from":[1,2],"next":5,"info":{"kind":"operation","name":"subtraction"}},{"id":"7","step":4,"from":0,"next":5,"info":{"kind":"arg","type":"float","name":"val_3","arg_id":3}},{"id":"8","step":5,"from":[4,3],"next":0,"info":{"kind":"operation","name":"subtraction"}}]} )
+db.functions.insert( {"name":"Test_Logic","output_type":"boolean","args":[{"type":"boolean","name":"val_1","arg_id":1},{"type":"boolean","name":"val_2","arg_id":2}],"expression":[{"id":"1","step":1,"from":0,"next":3,"info":{"kind":"arg","type":"boolean","name":"val_1","arg_id":1}},{"id":"2","step":2,"from":0,"next":3,"info":{"kind":"arg","type":"boolean","name":"val_2","arg_id":2}},{"id":"3","step":3,"from":[1,2],"next":4,"info":{"kind":"operation","name":"logical_and"}},{"id":"4","step":4,"from":3,"next":0,"info":{"kind":"operation","name":"logical_not"}}]} )
+db.functions.insert( {"function_id":"e59ac49f0ad48","name":"test_add_2","output_type":"float","color":"#a53434","args":[{"type":"int-column","name":"","arg_id":1},{"type":"int-column","name":"","arg_id":2}],"expression":[{"id":1664380105855,"step":1,"info":{"kind":"operation","name":"addition","color":"#a53434","output":"float"},"from":[2,3],"next":0},{"id":1664380145492,"step":2,"info":{"kind":"arg","type":"int-column","name":"","arg_id":1},"from":0,"next":1},{"id":1664380147964,"step":3,"info":{"kind":"arg","type":"int-column","name":"","arg_id":2},"from":0,"next":1}],"metadata":{"user":"panos","function-type":"simple","function-date":"28-09-2022","function-time":"18:49:54:216"}} )
+db.functions.find()
 
 ```
 The above can by copy and pasted from top to bottom and it will run automatically.
@@ -59,8 +61,8 @@ docker run -d -p 127.0.0.1:5000:5000 ^
 -e PORT=5000 ^
 -e MONGO_HOST=host.docker.internal ^
 -e MONGO_PORT=27017 ^
--e DATABASE=TEST ^
--e COLLECTION=library ^
+-e DATABASE=UIDB ^
+-e COLLECTION=functions ^
 function-normalization-server-image
 ```
 - Above, you can change the Mongo host and port if you have configured it.
